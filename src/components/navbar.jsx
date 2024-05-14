@@ -14,15 +14,20 @@ const Navbar = () => {
     return (
         
         <div className='h-full flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48'>
+            <div className="hidden md:flex gap-3">
+                        {links.map(link=>(
+                            <Link href={link.url} key={link.title}>{link.title}</Link>
+                        ))}
+            </div>
             {/* LOGO*/}
-            <div className=''>
-                <Link href="/" className="text-sm bg-black rounded-md p-1 font-semibold flex items-center justify-center">
-                    <span className="text-white mr-1">Alex</span>
-                    <span className="w-12 h-8 rounded bg-white text-black flex items-center justify-center">Dang</span>
+            <div className='flex-shrink-0 md:hidden' >
+                <Link href="/" className="flex items-center justify-center">
+                    <img src="/coo4.gif" alt="Logo" className="w-32" />
                 </Link>
             </div>
-            {/* Menu Button */}
-            <div className=''>
+            {/*menu*/}
+            <div className='md:hidden'>
+                {/* Menu Button */}
                 <button className="w-10 h-8 flex flex-col justify-between z-50 relative " 
                 onClick={(()=>setOpen(prev=>!prev))}>
                     <div className="w-10 h-1 bg-white rounded"></div>
