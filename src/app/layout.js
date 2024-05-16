@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
-
+import { MenuProvider } from "@/components/menucontext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -13,14 +13,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="w-screen min-h-screen bg-gradient-to-b from-blue-start via-blue-mid1 via-14% via-blue-mid2 via-26% via-blue-mid3 via-41% to-black-end to-75% overflow-auto">
-          <div className="h-24">
-            <Navbar />
+        <MenuProvider> {/* Wrap the content with MenuProvider */}
+          <div className="w-screen min-h-screen bg-gradient-to-b from-blue-start via-blue-mid1 via-14% via-blue-mid2 via-26% via-blue-mid3 via-41% to-black-end to-75% overflow-auto">
+            <div className="h-24">
+              <Navbar />
+            </div>
+            <div className="min-h-[calc(100vh - 6rem)] flex flex-col justify-center items-center">
+              {children}
+            </div>
           </div>
-          <div className="min-h-[calc(100vh - 6rem)] flex flex-col justify-center items-center">
-            {children}
-          </div>
-        </div>
+        </MenuProvider>
       </body>
     </html>
   );

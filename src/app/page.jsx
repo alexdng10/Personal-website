@@ -1,12 +1,15 @@
-"use client"
+"use client";
 
-import React from 'react';
+import React, { useContext } from 'react';
 import Spline from '@splinetool/react-spline';
+import { MenuContext } from "@/components/menucontext";
 
 export default function HomePage() {
+  const { isMenuOpen } = useContext(MenuContext);
+
   return (
     <div className="flex flex-col md:flex-row justify-center items-center h-full w-full">
-      <div className="flex-1 flex justify-center items-center md:pr-5 h-full">
+      <div className={`flex-1 flex justify-center items-center md:pr-5 h-full ${isMenuOpen ? 'hidden' : 'flex'}`}>
         {/* Spline for mobile screens */}
         <div className="w-full max-w-xs md:hidden transform translate-x-[-15%]">
           <Spline scene="https://prod.spline.design/uJe5uzGCeuqHvySq/scene.splinecode" />
