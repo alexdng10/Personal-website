@@ -1,3 +1,63 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Add this to your globals.css or create a new CSS file and import it */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+
+    min-height: 80vh;
+    background: linear-gradient(to bottom, #00008b, #000000);
+    box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
+}
+
+.grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(3, 1fr); /* Ensure 3 columns */
+    width: 100%;
+    max-width: 1200px;
+    padding: 16px;
+}
+
+/* Media query for small screens (e.g., iPhone) */
+@media (max-width: 767px) {
+    .grid {
+        grid-template-columns: 1fr; /* Single column layout */
+    }
+
+    .container {
+        padding: 20px; /* Add padding to ensure gap around the container */
+        max-width: 50vh;
+    }
+
+    .card {
+        width: 80%; /* Full width cards */
+        margin: 16px auto; /* Center the card horizontally */
+        aspect-ratio: 1; /* Ensure the card is square */
+        padding: 10px; /* Adjust padding if needed */
+    }
+}
+
+.card {
+    background-color: #1e1e1e;
+    color: white;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    aspect-ratio: 1; /* Ensure the card is square */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Ensure hover effects stay within the card */
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
