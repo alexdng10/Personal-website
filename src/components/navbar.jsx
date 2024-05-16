@@ -2,6 +2,8 @@
 
 
 import Link from "next/link"
+import Image from 'next/image';
+
 import { useState } from "react";
 const links = [
     { url: "/", title: "Home"},
@@ -13,19 +15,33 @@ const Navbar = () => {
     const [open,setOpen]=useState(false)
     return (
         
+        
         <div className='h-full flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48'>
-            <div className="hidden md:flex gap-3">
-                        {links.map(link=>(
-                            <Link href={link.url} key={link.title}>{link.title}</Link>
-                        ))}
+            {/*LINKS*/}
+            <div className="hidden md:flex gap-4 text-white w-1/3">
+                    {links.map(link=>(
+                        <Link href={link.url} key={link.title}>{link.title}</Link>
+                    ))}
             </div>
             {/* LOGO*/}
-            <div className='flex-shrink-0 md:hidden' >
+            <div className='flex-shrink-0 md:hidden lg:flex w-1/3 justify-center' >
                 <Link href="/" className="flex items-center justify-center">
                     <img src="/coo4.gif" alt="Logo" className="w-32" />
                 </Link>
             </div>
-            {/*menu*/}
+            {/*github others*/}
+            <div className="hidden md:flex gap-4 w-1/3">
+                <Link href="/">
+                    <Image src="/github.png" alt="" width={24} height={24}/>
+                </Link>
+                <Link href="/">
+                    <Image src="/youtube.png" alt="" width={24} height={24}/>
+                </Link>
+                <Link href="/">
+                    <Image src="/linkedin.png" alt="" width={24} height={24}/>
+                </Link>
+            </div>
+            {/* responsive menu*/}
             <div className='md:hidden'>
                 {/* Menu Button */}
                 <button className="w-10 h-8 flex flex-col justify-between z-50 relative " 
