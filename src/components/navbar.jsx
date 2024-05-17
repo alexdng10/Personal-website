@@ -1,15 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import Image from 'next/image';
 import { useContext } from "react";
 import { MenuContext } from "@/components/menucontext";
 
 const links = [
-    { url: "/", title: "Home" },
-    { url: "/about", title: "About" },
-    { url: "/portfolio", title: "Portfolio" },
-    { url: "/contact", title: "Contact" },
+  { url: "/", title: "Home" },
+  { url: "/about", title: "About" },
+  { url: "/portfolio", title: "Portfolio" },
+  { url: "/contact", title: "Contact" },
 ];
 
 const Navbar = () => {
@@ -36,13 +35,13 @@ const Navbar = () => {
       {/* Github others */}
       <div className="hidden md:flex gap-11 w-1/3 justify-end">
         <Link href="https://github.com/alexdng10">
-          <Image src="/github.png" alt="" width={24} height={24} />
+          <img src="/github.png" alt="GitHub" width={24} height={24} />
         </Link>
         <Link href="https://www.youtube.com/@hungquedang8460/videos">
-          <Image src="/youtube.png" alt="" width={24} height={24} />
+          <img src="/youtube.png" alt="YouTube" width={24} height={24} />
         </Link>
         <Link href="https://www.linkedin.com/in/hungqdang/">
-          <Image src="/linkedin.png" alt="" width={24} height={24} />
+          <img src="/linkedin.png" alt="LinkedIn" width={24} height={24} />
         </Link>
       </div>
       {/* Responsive menu */}

@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useContext } from 'react';
-import Image from 'next/image';
 import { MenuContext } from "@/components/menucontext";
 
 export default function AboutPage() {
@@ -12,12 +11,11 @@ export default function AboutPage() {
       {!isMenuOpen && (
         <div className="flex-1 flex justify-center items-center md:pr-5 h-full">
           <div className="w-full max-w-xs md:max-w-sm transform md:translate-x-0">
-            <Image
+            <img
               src="/alex2.png" // Make sure to place the image in the public directory
               alt="Alex Dang"
-              width={450}
-              height={450}
               className="rounded-full"
+              style={{ width: '450px', height: '450px' }} // Added inline styles for size
             />
           </div>
         </div>
