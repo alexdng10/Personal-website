@@ -20,7 +20,7 @@ export default function HomePage() {
         </div>
       </div>
       <div className="flex-1 text-center md:text-left text-white flex flex-col justify-center items-center md:items-start md:pl-5 mt-10 md:mt-0">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Alex Dang's Portfolio</h1>
+        <h1 className="text-4xl font-bold mb-4">Welcome to Alex Dang&apos;s Portfolio</h1>
         <p className="text-lg">
           Alex Dang is a passionate software engineer dedicated to delivering high-quality products.
           Explore his portfolio to learn more about his projects and expertise.

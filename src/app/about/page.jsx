@@ -26,9 +26,9 @@ export default function AboutPage() {
         <div className="bg-white bg-opacity-10 p-6 rounded-lg max-w-lg">
           <h1 className="text-4xl font-bold mb-4">About Me</h1>
           <p className="text-lg">
-            Hi, I'm Alex Dang, a second-year computer science student at Western University. 
+            Hi, I&apos;m Alex Dang, a second-year computer science student at Western University. 
             I am passionate about developing high-quality software and am committed to continuously learning and honing my skills. 
-            Explore my portfolio to discover the projects I've worked on and the expertise I've developed. 
+            Explore my portfolio to discover the projects I&apos;ve worked on and the expertise I&apos;ve developed. 
             As an international student, I bring a diverse perspective to my work. 
             Join me on my journey to perfect my craft and make a meaningful impact in the tech world.
           </p>
