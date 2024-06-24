@@ -3,12 +3,15 @@
 import React, { useContext } from 'react';
 import Spline from '@splinetool/react-spline';
 import { MenuContext } from "@/components/menucontext";
+import LoadingScreen from '@/components/LoadingScreen';
 
 export default function HomePage() {
   const { isMenuOpen } = useContext(MenuContext);
 
   return (
+    
     <div className="flex flex-col md:flex-row justify-center items-center h-full w-full">
+      <LoadingScreen/>
       <div className={`flex-1 flex justify-center items-center md:pr-5 h-full ${isMenuOpen ? 'hidden' : 'flex'}`}>
         {/* Spline for mobile screens */}
         <div className="w-full max-w-xs md:hidden transform translate-x-[-15%]">
