@@ -8,7 +8,7 @@ const LoadingScreen = () => {
     action: {
       x:100,
       transition:{
-        duration:4
+        duration:3
       }
     },
    
@@ -16,11 +16,11 @@ const LoadingScreen = () => {
       rotate:20,
       transition:{
         duration:2,
-        delay: 4 
+        delay: 3 
       }
     },
     opened: {
-      x: "100vw",
+      x: "70vw",
     },
     
     
