@@ -1,7 +1,22 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from "framer-motion";
 
 const LoadingScreen = ({ onAnimationComplete }) => {
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsLargeScreen(window.innerWidth >= 768); // Adjust the breakpoint as needed
+    };
+
+    checkScreenSize(); // Check on initial render
+    window.addEventListener('resize', checkScreenSize);
+
+    return () => {
+      window.removeEventListener('resize', checkScreenSize);
+    };
+  }, []);
+
   const topVariants = {
     action: {
       x: 45,
@@ -79,7 +94,7 @@ const LoadingScreen = ({ onAnimationComplete }) => {
       y: -20,
       scale: 100,
       transition: {
-        duration: 2.5,
+        duration: 1,
         delay: 6.5,
       },
     },
@@ -89,11 +104,12 @@ const LoadingScreen = ({ onAnimationComplete }) => {
   };
 
   useEffect(() => {
+    const timeoutDuration = isLargeScreen ? 8400 : 7800; // Adjust the timing based on screen size
     const timeout = setTimeout(() => {
       onAnimationComplete();
-    }, 7800); // Adjust the timing to match the total duration of your animations
+    }, timeoutDuration);
     return () => clearTimeout(timeout);
-  }, [onAnimationComplete]);
+  }, [onAnimationComplete, isLargeScreen]);
 
   return (
     <div className="fixed inset-0 bg-black flex justify-center items-center z-50">
@@ -119,7 +135,7 @@ const LoadingScreen = ({ onAnimationComplete }) => {
         <motion.div
           variants={circleChan}
           initial="opened"
-          animate={"action"}
+          animate={isLargeScreen ? "action2" : "action"}
           className="h-8 w-8 bg-white rounded-full"
         ></motion.div>
       </div>
