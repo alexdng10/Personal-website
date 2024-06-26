@@ -54,7 +54,6 @@ const Navbar = () => {
     },
     exit: {
       x: "100vw",
-      
     },
   };
 
@@ -70,12 +69,18 @@ const Navbar = () => {
     }
   };
 
+  const handleLinkClick = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <div className='h-full flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48'>
       {/* LINKS */}
       <div className="hidden md:flex gap-4 text-white w-1/3">
         {links.map(link => (
-          <Link href={link.url} key={link.title}>{link.title}</Link>
+          <Link href={link.url} key={link.title}>
+            {link.title}
+          </Link>
         ))}
       </div>
       {/* LOGO */}
@@ -120,7 +125,9 @@ const Navbar = () => {
               className="absolute top-0 left-0 w-screen h-screen bg-black text-white flex flex-col items-center justify-center gap-8 text-4xl z-40"
             >
               {links.map(link => (
-                <Link href={link.url} key={link.title}>{link.title}</Link>
+                <Link href={link.url} key={link.title} onClick={handleLinkClick}>
+                  {link.title}
+                </Link>
               ))}
             </motion.div>
           )}
